@@ -1,0 +1,30 @@
+﻿@model Gasto
+
+@{
+    ViewData["Title"] = "Detalle del Gasto";
+}
+
+<h1>Detalle del Gasto</h1>
+
+<div class="card" style="max-width: 500px;">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Descripcion)</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Descripcion)</dd>
+
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Monto)</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Monto)</dd>
+
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Fecha)</dt>
+            <dd class="col-sm-8">@Model.Fecha.ToString("yyyy-MM-dd")</dd>
+
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Categoria)</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Categoria)</dd>
+        </dl>
+    </div>
+</div>
+
+<br />
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
+<a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
